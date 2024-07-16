@@ -4,7 +4,7 @@ print("NumPy version:", np.__version__)
 import matplotlib.pyplot as plt
 
 # 加载音频文件
-audio_path = r'C:\\Users\\herrw\\Desktop\\VP-Noise-ML-Model\\音频文件\\NGW\\NG1.wav'
+audio_path = r'C:\\Users\\herrw\\Desktop\\VP-Noise-ML-Model\\音频文件\\NG\\NG1.wav'
 y, sr = librosa.load(audio_path, sr=None)
 
 # 计算 FFT

@@ -5,10 +5,11 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
+import joblib
 
 # 定义文件夹路径
-normal_folder = r'C:\\Users\\herrw\\Desktop\\VP-Noise-ML-Model\\音频文件\\OKW'
-abnormal_folder = r'C:\\Users\\herrw\\Desktop\\VP-Noise-ML-Model\\音频文件\\NGW'
+normal_folder = r'C:\\Users\\herrw\\Desktop\\VP-Noise-ML-Model\\音频文件\\OK'
+abnormal_folder = r'C:\\Users\\herrw\\Desktop\\VP-Noise-ML-Model\\音频文件\\NG'
 
 # 提取特征的函数
 def extract_features(file_path):
@@ -57,3 +58,5 @@ y_pred = clf.predict(X_test)
 # calculating accurancy
 accuracy = accuracy_score(y_test, y_pred)
 print(f'Accuracy: {accuracy}')
+
+joblib.dump(clf, 'model1.pkl')

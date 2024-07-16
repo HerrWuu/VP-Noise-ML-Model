@@ -31,5 +31,5 @@ def convert_m4a_to_wav(input_folder, output_folder):
 
 # 示例用法
 input_folder = 'c:/Users/herrw/Desktop/NGM'
-output_folder = 'c:/Users/herrw/Desktop/NGW'
+output_folder = 'c:/Users/herrw/Desktop/NG'
 convert_m4a_to_wav(input_folder, output_folder)

@@ -9,8 +9,8 @@ from sklearn.preprocessing import StandardScaler
 import joblib
 
 # 定义文件夹路径
-normal_folder = r'C:\\Users\\herrw\\Desktop\\VP-Noise-ML-Model\\音频文件\\OKW'
-abnormal_folder = r'C:\\Users\\herrw\\Desktop\\VP-Noise-ML-Model\\音频文件\\NGW'
+normal_folder = r'C:\\Users\\herrw\\Desktop\\VP-Noise-ML-Model\\音频文件\\OK'
+abnormal_folder = r'C:\\Users\\herrw\\Desktop\\VP-Noise-ML-Model\\音频文件\\NG'
 
 # 提取特征的函数
 def extract_features(file_path):
