@@ -7,18 +7,18 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import joblib
 
-# 定义文件夹路径
-normal_folder = r'C:\\Users\\herrw\\Desktop\\VP-Noise-ML-Model\\音频文件\\OK'
-abnormal_folder = r'C:\\Users\\herrw\\Desktop\\VP-Noise-ML-Model\\音频文件\\NG'
+# file path
+normal_folder = r'C:\\Users\\herrw\\Desktop\\VP-Noise-ML-Model\\NoiseData\\OK'      #change to ur own path
+abnormal_folder = r'C:\\Users\\herrw\\Desktop\\VP-Noise-ML-Model\\NoiseData\\NG'
 
-# 提取特征的函数
+# extract feature function
 def extract_features(file_path):
     y, sr = librosa.load(file_path, sr=None)
     mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)
     mfccs_mean = mfccs.mean(axis=1)
     return mfccs_mean
 
-# 读取文件并提取特征
+# load and extract feature
 def load_data(folder, label):
     features = []
     for file_name in os.listdir(folder):

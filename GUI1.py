@@ -7,10 +7,10 @@ import tkinter as tk
 from tkinter import filedialog
 from tkinter import messagebox
 
-# 加载保存的模型
+# load trained model in model1.py
 clf = joblib.load('model1.pkl')
 
-# 提取特征的函数
+# extract the feature from noise 
 def extract_features(file_path):
     try:
         y, sr = librosa.load(file_path, sr=None)
@@ -21,7 +21,7 @@ def extract_features(file_path):
         print(f"Error processing file {file_path}: {e}")
         return None
 
-# 预测函数
+# prediction model
 def predict_audio(file_path):
     feature = extract_features(file_path)
     if feature is not None:
@@ -31,23 +31,22 @@ def predict_audio(file_path):
     else:
         return "Error"
 
-# 选择文件并预测
+# chose file and start prediction
 def select_file_and_predict():
     file_path = filedialog.askopenfilename(filetypes=[("Audio files", "*.wav")])
     if file_path:
         result = predict_audio(file_path)
         messagebox.showinfo("Prediction Result", f"The prediction for the audio file is: {result}")
 
-# 创建主窗口
+# create main window
 root = tk.Tk()
 root.title("Audio Classification")
 
-# 设置主窗口的大小
-root.geometry("600x400")  # 设置窗口的宽度和高度，例如 600x400
 
-# 创建按钮
+root.geometry("600x400") 
+
+
 select_button = tk.Button(root, text="Select Audio File", command=select_file_and_predict)
 select_button.pack(pady=20)
 
-# 运行主循环
 root.mainloop()
